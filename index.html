@@ -1,20 +1,29 @@
-const pokemon_number = document.getElementById("pknum");
-const pokemon_name = document.getElementById("pkname");
-const pokemon_img = document.getElementById("pkimg");
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<body>
+    <main>
+        <img id="pkimg" class="pokemon_img" src="a" alt="pokemon">
+        <h1>
+            <form id="form" class="form">
+                <input type="search"
+                id="input"
+                class="input_search"
+                placeholder="Nome ou Número"
+                required>
+            </form>
 
-const pokemon_form = document.getElementById("form");
-const pokemon_input = document.getElementById("input");
+            <div class="buttons">
+                <button id="bnt-prev" class="button"> Prev &lt;</button>
+                <button id="bnt-next" class="button"> Next &gt;</button>
+            </div>
 
-const pokemon_prev = document.getElementById("bnt-prev");
-const pokemon_next = document.getElementById("bnt-next");
-
-let searchPokemon = 1;
-
-const fetchpokemon = async (pokemon) => {
-    const APIResponse = await fetch
-    ('https://pokeapi.co/api/v2/pokemon/$(pokemon)');
-    if (APIResponse.status === 200){
-        const data = await APIResponse.json();
-        return data;
-    }
-}
+            <img class="pokedex" src="pokedex.png" alt="Pokédex">
+        </h1>
+    </main>
+</body>
+</html>
